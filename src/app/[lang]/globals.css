@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  /* Палитра „Морски залез“ */
+  --color-navy-950: #0a1b2c;
+  --color-navy-900: #0f2a44;
+  --color-navy-800: #173a5c;
+  --color-navy-700: #24507a;
+  --color-sand-50: #fbf8f3;
+  --color-sand-100: #f5eee3;
+  --color-sand-200: #eadfcc;
+  --color-sand-300: #dccaae;
+  --color-gold-300: #e6cf9c;
+  --color-gold-400: #d9b872;
+  --color-gold-500: #c9a15a;
+  --color-gold-600: #a8823e;
+  --color-gold-700: #7d5f28; /* злато за текст върху светъл фон (AA) */
+  --color-ink: #1c2733;
+  --color-muted: #c2ccd8; /* светъл второстепенен текст върху тъмния фон */
+
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(15 42 68 / 0.04), 0 8px 24px -8px rgb(15 42 68 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(15 42 68 / 0.06), 0 24px 48px -12px rgb(15 42 68 / 0.22);
+
+  --animate-rise: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  @keyframes rise {
+    from { opacity: 0; transform: translate3d(0, 24px, 0); }
+    to { opacity: 1; transform: none; }
+  }
+  --animate-rise-soft: rise-soft 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  @keyframes rise-soft {
+    from { transform: translate3d(0, 24px, 0); }
+    to { transform: none; }
+  }
+  --animate-kenburns: kenburns 24s ease-in-out infinite alternate;
+  @keyframes kenburns {
+    from { transform: scale(1) translate3d(0, 0, 0); }
+    to { transform: scale(1.12) translate3d(-1.5%, -1.5%, 0); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-navy-950 text-white font-sans antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-serif text-white;
+    text-shadow: 0 2px 28px rgb(10 27 44 / 0.55);
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  section[id] { scroll-margin-top: 5rem; }
+  :focus-visible {
+    outline: 3px solid var(--color-gold-500);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Reveal при скрол (виж components/Reveal.tsx) */
+.js .reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s);
+}
+.js .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+@utility container-x {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+}
+
+@utility section-y {
+  @apply py-20 sm:py-28;
+}
+
+@utility eyebrow {
+  @apply text-xs font-semibold tracking-[0.2em] uppercase text-gold-300;
+}
+
+@utility heading-2 {
+  @apply mt-3 text-3xl leading-tight sm:text-5xl;
+}
+
+@utility lead {
+  @apply mt-4 max-w-2xl text-lg text-muted;
+}
+
+@utility btn {
+  @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-semibold transition duration-300 ease-out select-none;
+}
+
+@utility btn-gold {
+  @apply btn bg-gold-500 text-navy-950 shadow-[0_8px_24px_-8px_rgb(201_161_90/0.7)] hover:-translate-y-0.5 hover:bg-gold-400 hover:shadow-[0_14px_32px_-10px_rgb(201_161_90/0.8)] active:translate-y-0;
+}
+
+@utility btn-ghost-light {
+  @apply btn border border-white/50 text-white backdrop-blur-sm hover:bg-white/15 hover:border-white;
+}
+
+@utility btn-navy {
+  @apply btn bg-navy-900 text-white hover:-translate-y-0.5 hover:bg-navy-800;
+}
+
+@utility card {
+  @apply rounded-3xl border border-white/12 bg-navy-950/55 text-white shadow-card backdrop-blur-xl;
+}
+
+@utility glass {
+  @apply border border-white/12 bg-navy-950/50 backdrop-blur-lg;
+}
