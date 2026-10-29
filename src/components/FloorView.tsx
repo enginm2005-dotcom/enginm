@@ -38,7 +38,7 @@ export function FloorView({ t }: { t: Dict["floors"] }) {
           {/* Сградата */}
           <div role="radiogroup" aria-label={t.pick} onKeyDown={onKey} className="flex flex-col">
             <div className="mx-auto h-2 w-3/4 rounded-t-md bg-gold-500/80" aria-hidden="true" />
-            <div className="flex flex-col-reverse gap-1 rounded-t-lg border border-white/15 bg-navy-950/60 p-1.5 backdrop-blur-md">
+            <div className="flex flex-col-reverse gap-1 rounded-t-lg border border-white/15 bg-navy-950/60 p-1.5">
               {Array.from({ length: FLOORS }, (_, i) => i + 1).map((f) => {
                 const active = f === floor;
                 return (
@@ -98,7 +98,7 @@ export function FloorView({ t }: { t: Dict["floors"] }) {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
-                className="absolute top-4 left-4 rounded-full bg-navy-950/70 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur"
+                className="absolute top-4 left-4 rounded-full bg-navy-950/70 px-4 py-1.5 text-sm font-semibold text-white"
               >
                 {floor} {t.floorLabel}
               </m.span>

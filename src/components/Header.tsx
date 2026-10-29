@@ -56,7 +56,7 @@ export function Header({ lang, nav }: { lang: Locale; nav: Dict["nav"] }) {
     <header
       className={clsx(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled ? "border-b border-white/10 bg-navy-950/60 shadow-[0_4px_30px_-12px_rgb(0_0_0/0.5)] backdrop-blur-xl" : "bg-transparent",
+        scrolled ? "border-b border-white/10 bg-navy-950/88 shadow-[0_4px_30px_-12px_rgb(0_0_0/0.5)]" : "bg-transparent",
       )}
     >
       <nav aria-label="Main" className="container-x flex h-16 items-center justify-between gap-4 sm:h-20">

@@ -114,7 +114,7 @@
 }
 
 @utility btn-ghost-light {
-  @apply btn border border-white/50 text-white backdrop-blur-sm hover:bg-white/15 hover:border-white;
+  @apply btn border border-white/50 bg-navy-950/30 text-white hover:bg-white/15 hover:border-white;
 }
 
 @utility btn-navy {
@@ -122,9 +122,9 @@
 }
 
 @utility card {
-  @apply rounded-3xl border border-white/12 bg-navy-950/55 text-white shadow-card backdrop-blur-xl;
+  @apply rounded-3xl border border-white/12 bg-navy-950/72 text-white shadow-card;
 }
 
 @utility glass {
-  @apply border border-white/12 bg-navy-950/50 backdrop-blur-lg;
+  @apply border border-white/12 bg-navy-950/65;
 }

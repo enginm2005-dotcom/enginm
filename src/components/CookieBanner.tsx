@@ -40,7 +40,7 @@ export function CookieBanner({ lang }: { lang: Locale }) {
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 40, opacity: 0 }}
-          className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-2xl rounded-2xl bg-navy-950/95 p-4 text-xs text-white/85 shadow-lift backdrop-blur sm:inset-x-6 sm:bottom-6 sm:p-5 sm:text-sm"
+          className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-2xl rounded-2xl bg-navy-950 p-4 text-xs text-white/85 shadow-lift sm:inset-x-6 sm:bottom-6 sm:p-5 sm:text-sm"
         >
           <p>
             {t.text}{" "}

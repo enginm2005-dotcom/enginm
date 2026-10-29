@@ -204,6 +204,10 @@ export const en: Dict = {
     necessary: "Necessary only",
   },
   sticky: { book: "Book", call: "Call", whatsapp: "WhatsApp" },
+  scene: {
+    floor: "Floor",
+    names: ["Reception", "Restaurant", "Spa & pool", "Gym", "Kids' club", "Standard rooms", "Deluxe rooms", "Suites", "Lounge & library", "Conference room", "Penthouse", "Rooftop bar"],
+  },
   legal: {
     back: "Back to home",
     pages: {

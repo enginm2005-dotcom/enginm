@@ -8,7 +8,7 @@ const icons: Record<string, LucideIcon> = { breakfast: Coffee, pool: Sun, dinner
 
 export function DayTimeline({ t }: { t: Dict["day"] }) {
   return (
-    <section aria-labelledby="day-title" className="section-y">
+    <section id="day" aria-labelledby="day-title" className="section-y">
       <div className="container-x">
         <Reveal>
           <p className="eyebrow">{t.eyebrow}</p>

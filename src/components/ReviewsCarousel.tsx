@@ -67,7 +67,7 @@ export function ReviewsCarousel({ lang }: { lang: Locale }) {
       </div>
 
       <div className="mt-6 flex items-center justify-center gap-4">
-        <button type="button" onClick={() => go(-1)} aria-label={t.prev} className="grid size-11 place-items-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur transition hover:border-gold-500 hover:bg-gold-500 hover:text-navy-950">
+        <button type="button" onClick={() => go(-1)} aria-label={t.prev} className="grid size-11 place-items-center rounded-full border border-white/25 bg-white/10 text-white transition hover:border-gold-500 hover:bg-gold-500 hover:text-navy-950">
           <ChevronLeft className="size-5" aria-hidden="true" />
         </button>
         <div className="flex gap-1">
@@ -84,7 +84,7 @@ export function ReviewsCarousel({ lang }: { lang: Locale }) {
             </button>
           ))}
         </div>
-        <button type="button" onClick={() => go(1)} aria-label={t.next} className="grid size-11 place-items-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur transition hover:border-gold-500 hover:bg-gold-500 hover:text-navy-950">
+        <button type="button" onClick={() => go(1)} aria-label={t.next} className="grid size-11 place-items-center rounded-full border border-white/25 bg-white/10 text-white transition hover:border-gold-500 hover:bg-gold-500 hover:text-navy-950">
           <ChevronRight className="size-5" aria-hidden="true" />
         </button>
       </div>

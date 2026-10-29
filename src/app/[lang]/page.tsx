@@ -27,7 +27,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <a href="#main" className="sr-only z-[100] rounded-full bg-gold-500 px-5 py-3 font-semibold text-navy-950 focus:not-sr-only focus:fixed focus:top-3 focus:left-3">
         {t.skip}
       </a>
-      <ScrollScene />
+      <ScrollScene labels={t.scene} />
       <JsonLd lang={lang} />
       <Header lang={lang} nav={t.nav} />
       <main id="main">

@@ -42,7 +42,7 @@ export function BookingForm({ lang }: { lang: Locale }) {
   const label = "flex items-center gap-1.5 text-sm font-medium text-navy-800";
 
   return (
-    <form onSubmit={submit} noValidate className="grid gap-4 rounded-3xl bg-sand-50/95 p-5 shadow-lift backdrop-blur sm:grid-cols-2 sm:p-6 lg:grid-cols-[1fr_1fr_0.8fr_auto] lg:items-end">
+    <form onSubmit={submit} noValidate className="grid gap-4 rounded-3xl bg-sand-50/95 p-5 shadow-lift sm:grid-cols-2 sm:p-6 lg:grid-cols-[1fr_1fr_0.8fr_auto] lg:items-end">
       <div>
         <label htmlFor="checkin" className={label}><CalendarDays className="size-4 text-gold-700" aria-hidden="true" />{t.checkin}</label>
         <input
