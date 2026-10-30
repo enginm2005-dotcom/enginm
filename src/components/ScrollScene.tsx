@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 /**
  * Фиксиран фон: „камера“ върху истинската снимка на хотела, движена от скрола:
- * целият хотел → в рецепцията → навън към улицата → етаж по етаж → козирката → целият хотел.
+ * целият хотел → вътре в лобито → оттам нагоре етаж по етаж → козирката → целият хотел.
  * Логиката е в ./scene/photoScene.ts и се зарежда отложено, за да не бави първото показване.
  *
  * ANCHORS връзва секции от страницата с ключови кадри от пътя на камерата.
@@ -12,7 +12,7 @@ const ANCHORS: [id: string | null, key: string][] = [
   [null, "outside"],
   ["stats", "approach"],
   ["rooms", "lobby"],
-  ["floors", "turn"],
+  ["floors", "rise"],
   ["amenities", "f1"],
   ["day", "f2"],
   ["faq", "f3"],
@@ -42,7 +42,9 @@ export function ScrollScene({ labels }: { labels: SceneLabels }) {
       if (!alive) return;
       let scene: Awaited<ReturnType<typeof mod.createPhotoScene>>;
       try {
-        scene = await mod.createPhotoScene(canvas, { src: "/scene/hotel.webp" });
+        // 4K (2944×4416, AI увеличение) за десктоп; по-лека версия за телефони
+        const small = window.matchMedia("(max-width: 767px)").matches;
+        scene = await mod.createPhotoScene(canvas, { src: small ? "/scene/hotel-m.webp" : "/scene/hotel.webp" });
       } catch {
         return; // ако снимката не се зареди, остава постерът
       }
