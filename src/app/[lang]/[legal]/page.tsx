@@ -26,7 +26,7 @@ export default async function LegalPage({ params }: Props) {
   const p = t.pages[legal];
   return (
     <main className="container-x max-w-3xl py-20">
-      <Link href={`/${lang}`} className="inline-flex items-center gap-2 text-sm font-semibold text-gold-300 hover:text-white">
+      <Link href={`/${lang}`} className="inline-flex items-center gap-2 text-sm font-semibold text-bronze-dark hover:text-ink">
         <ArrowLeft className="size-4" aria-hidden="true" />{t.back}
       </Link>
       <h1 className="mt-8 text-4xl sm:text-5xl">{p.title}</h1>

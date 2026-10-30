@@ -158,7 +158,7 @@ export function ScrollScene({ labels }: { labels: SceneLabels }) {
 
   return (
     <>
-      <div aria-hidden="true" className="pointer-events-none fixed top-0 left-0 -z-10 h-[100lvh] w-full overflow-hidden bg-[#f6ecdf]">
+      <div aria-hidden="true" className="pointer-events-none fixed top-0 left-0 -z-10 h-[100lvh] w-full overflow-hidden bg-cream">
         {/* постер: първият кадър, докато 3D сцената се зареди */}
         <picture>
           <source media="(max-width: 767px)" srcSet="/scene/poster-m.webp" />
@@ -166,7 +166,7 @@ export function ScrollScene({ labels }: { labels: SceneLabels }) {
         </picture>
         <canvas ref={canvasRef} className="absolute inset-0 size-full opacity-0 transition-opacity duration-500 data-[ready]:opacity-100" />
         {/* затъмняване за четимост на белия текст */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/30 via-navy-950/40 to-navy-950/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-cream/45 via-cream/55 to-cream/70" />
       </div>
 
       {/* индикатор на етажа */}
@@ -174,9 +174,9 @@ export function ScrollScene({ labels }: { labels: SceneLabels }) {
         ref={chipRef}
         aria-hidden="true"
         data-show="0"
-        className="pointer-events-none fixed top-[4.5rem] right-3 z-30 flex items-baseline gap-2 rounded-full border border-white/15 bg-navy-950/80 px-3 py-1.5 text-white opacity-0 shadow-lift transition-opacity duration-500 data-[show=1]:opacity-100 sm:top-24 lg:top-1/2 lg:right-6 lg:-translate-y-1/2 lg:flex-col lg:items-end lg:gap-0 lg:rounded-2xl lg:px-5 lg:py-4"
+        className="pointer-events-none fixed top-[4.5rem] right-3 z-30 flex items-baseline gap-2 rounded-full border border-ink/15 bg-cream/80 px-3 py-1.5 text-ink opacity-0 shadow-lift transition-opacity duration-500 data-[show=1]:opacity-100 sm:top-24 lg:top-1/2 lg:right-6 lg:-translate-y-1/2 lg:flex-col lg:items-end lg:gap-0 lg:rounded-2xl lg:px-5 lg:py-4"
       >
-        <span ref={numRef} className="text-[10px] font-semibold tracking-[0.18em] text-gold-300 uppercase empty:hidden lg:text-xs lg:tracking-[0.2em]" />
+        <span ref={numRef} className="text-[10px] font-semibold tracking-[0.18em] text-bronze-dark uppercase empty:hidden lg:text-xs lg:tracking-[0.2em]" />
         <span ref={nameRef} className="font-serif text-sm leading-tight lg:text-2xl" />
       </div>
     </>

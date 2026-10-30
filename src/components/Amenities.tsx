@@ -21,11 +21,11 @@ export function Amenities({ t }: { t: Dict["amenities"] }) {
             const Icon = icons[a.key] ?? Sparkles;
             return (
               <Reveal as="li" key={a.key} delay={(i % 5) * 0.06}>
-                <div className="group h-full rounded-2xl glass p-5 transition duration-300 hover:-translate-y-1 hover:border-gold-400/60 hover:shadow-card sm:p-6">
-                  <span className="grid size-12 place-items-center rounded-xl bg-white/10 text-gold-300 transition duration-300 group-hover:bg-gold-500 group-hover:text-navy-950">
+                <div className="group h-full rounded-2xl glass p-5 transition duration-300 hover:-translate-y-1 hover:border-bronze/60 hover:shadow-card sm:p-6">
+                  <span className="grid size-12 place-items-center rounded-xl bg-ink/5 text-bronze-dark transition duration-300 group-hover:bg-bronze group-hover:text-white">
                     <Icon className="size-6" aria-hidden="true" />
                   </span>
-                  <h3 className="mt-4 font-sans text-base font-semibold text-white">{a.name}</h3>
+                  <h3 className="mt-4 font-sans text-base font-semibold text-ink">{a.name}</h3>
                   <p className="mt-1 text-sm text-muted">{a.text}</p>
                 </div>
               </Reveal>

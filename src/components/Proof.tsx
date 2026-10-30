@@ -31,12 +31,12 @@ export function Proof({ t, lang }: { t: Dict["proof"]; lang: Locale }) {
               <Reveal as="li" key={p.key} delay={i * 0.08}>
                 <a href={r.url} target="_blank" rel="noopener noreferrer" className="card flex h-full flex-col items-center px-2 py-5 text-center transition duration-300 hover:-translate-y-1 hover:shadow-lift sm:p-7">
                   <span className="rounded-lg bg-white px-2.5 py-1 text-xs sm:px-4 sm:py-1.5 sm:text-xl">{p.label}</span>
-                  <p className="mt-3 font-serif text-3xl text-white sm:mt-4 sm:text-5xl">
+                  <p className="mt-3 font-serif text-3xl text-ink sm:mt-4 sm:text-5xl">
                     {orX(r.score)}<span className="text-base text-muted sm:text-2xl">/{r.max}</span>
                   </p>
                   <span className="mt-2 flex gap-0.5 sm:mt-3 sm:gap-1" aria-hidden="true">
                     {Array.from({ length: 5 }, (_, s) => (
-                      <Star key={s} className={`size-3 sm:size-5 ${s < filled ? "fill-gold-500 text-gold-500" : "text-gold-500/50"}`} />
+                      <Star key={s} className={`size-3 sm:size-5 ${s < filled ? "fill-bronze text-bronze" : "text-bronze/50"}`} />
                     ))}
                   </span>
                   <p className="mt-2 text-xs text-muted sm:text-sm">{orX(r.count)} {t.reviewsOf}</p>
@@ -58,8 +58,8 @@ export function Proof({ t, lang }: { t: Dict["proof"]; lang: Locale }) {
           <h3 className="font-sans text-sm font-semibold tracking-[0.2em] text-muted uppercase">{t.awardsTitle}</h3>
           <ul className="mt-6 flex flex-wrap justify-center gap-3">
             {t.awards.map((a) => (
-              <li key={a} className="flex items-center gap-2 rounded-full glass px-5 py-2.5 text-sm text-white">
-                <Award className="size-4 text-gold-600" aria-hidden="true" />{a}
+              <li key={a} className="flex items-center gap-2 rounded-full glass px-5 py-2.5 text-sm text-ink">
+                <Award className="size-4 text-bronze-dark" aria-hidden="true" />{a}
               </li>
             ))}
           </ul>

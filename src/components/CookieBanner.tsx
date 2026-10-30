@@ -40,14 +40,14 @@ export function CookieBanner({ lang }: { lang: Locale }) {
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 40, opacity: 0 }}
-          className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-2xl rounded-2xl bg-navy-950 p-4 text-xs text-white/85 shadow-lift sm:inset-x-6 sm:bottom-6 sm:p-5 sm:text-sm"
+          className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-2xl rounded-2xl bg-espresso p-4 text-xs text-cream/85 shadow-lift sm:inset-x-6 sm:bottom-6 sm:p-5 sm:text-sm"
         >
           <p>
             {t.text}{" "}
-            <Link href={`/${lang}/privacy`} className="font-semibold text-gold-300 underline underline-offset-2">{t.policy}</Link>.
+            <Link href={`/${lang}/privacy`} className="font-semibold text-beige underline underline-offset-2">{t.policy}</Link>.
           </p>
           <div className="mt-3 grid grid-cols-2 gap-2 sm:flex sm:justify-end">
-            <button type="button" onClick={() => save("necessary")} className="btn min-h-11 border border-white/30 px-3 text-sm text-white hover:bg-white/10">{t.necessary}</button>
+            <button type="button" onClick={() => save("necessary")} className="btn min-h-11 border border-cream/30 px-3 text-sm text-cream hover:bg-cream/10">{t.necessary}</button>
             <button type="button" onClick={() => save("all")} className="btn-gold min-h-11 px-3 text-sm">{t.accept}</button>
           </div>
         </m.div>
@@ -58,7 +58,7 @@ export function CookieBanner({ lang }: { lang: Locale }) {
 
 export function CookieSettingsButton({ label }: { label: string }) {
   return (
-    <button type="button" onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_SETTINGS))} className="text-left hover:text-gold-300">
+    <button type="button" onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_SETTINGS))} className="text-left hover:text-beige">
       {label}
     </button>
   );

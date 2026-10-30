@@ -34,10 +34,10 @@ export function StickyBook({ t, waText }: { t: Dict["sticky"]; waText: string })
           animate={{ y: 0 }}
           exit={{ y: "110%" }}
           transition={{ type: "spring", stiffness: 260, damping: 30 }}
-          className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-navy-950/92 px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] lg:hidden"
+          className="fixed inset-x-0 bottom-0 z-40 border-t border-ink/10 bg-cream/92 px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] lg:hidden"
         >
           <div className="flex gap-2">
-            <a href={telHref} aria-label={t.call} className="grid size-12 shrink-0 place-items-center rounded-full border border-white/25 text-white">
+            <a href={telHref} aria-label={t.call} className="grid size-12 shrink-0 place-items-center rounded-full border border-ink/25 text-ink">
               <Phone className="size-5" aria-hidden="true" />
             </a>
             <a href={whatsappHref(waText)} target="_blank" rel="noopener noreferrer" aria-label={t.whatsapp} className="grid size-12 shrink-0 place-items-center rounded-full bg-[#1f7a4d] text-white">

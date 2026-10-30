@@ -22,12 +22,12 @@ export function MapEmbed({ label, note, title }: { label: string; note: string; 
     <button
       type="button"
       onClick={() => setShow(true)}
-      className="group relative flex h-56 w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_30%_40%,rgb(36_80_122/0.6),transparent_60%),linear-gradient(135deg,#173a5c,#0a1b2c)] text-white transition hover:border-gold-400/60"
+      className="group relative flex h-56 w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl border border-cream/10 bg-[radial-gradient(circle_at_30%_40%,rgb(141_112_91/0.45),transparent_60%),linear-gradient(135deg,#4a3a2f,#2e241e)] text-cream transition hover:border-beige"
     >
       <span className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgb(255_255_255/0.15)_1px,transparent_1px),linear-gradient(90deg,rgb(255_255_255/0.15)_1px,transparent_1px)] [background-size:28px_28px]" aria-hidden="true" />
-      <MapPin className="relative size-8 text-gold-400 transition group-hover:-translate-y-1" aria-hidden="true" />
+      <MapPin className="relative size-8 text-beige transition group-hover:-translate-y-1" aria-hidden="true" />
       <span className="relative font-semibold">{label}</span>
-      <span className="relative text-xs text-white/60">{note}</span>
+      <span className="relative text-xs text-cream/70">{note}</span>
     </button>
   );
 }

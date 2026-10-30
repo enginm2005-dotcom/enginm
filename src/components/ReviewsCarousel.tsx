@@ -48,16 +48,16 @@ export function ReviewsCarousel({ lang }: { lang: Locale }) {
             aria-label={`${i + 1} / ${n}`}
             className="card cursor-grab p-8 active:cursor-grabbing sm:p-10"
           >
-            <Quote className="size-9 text-gold-400" aria-hidden="true" />
-            <blockquote className="mt-4 font-serif text-xl leading-relaxed text-white sm:text-2xl">{r.text}</blockquote>
+            <Quote className="size-9 text-bronze-dark" aria-hidden="true" />
+            <blockquote className="mt-4 font-serif text-xl leading-relaxed text-ink sm:text-2xl">{r.text}</blockquote>
             <figcaption className="mt-6 flex flex-wrap items-center justify-between gap-3 text-sm">
               <span>
-                <span className="block font-semibold text-white">{r.name}</span>
+                <span className="block font-semibold text-ink">{r.name}</span>
                 <span className="text-muted">{r.country} · {r.date} · {r.source}</span>
               </span>
-              <span className="flex items-center gap-1 text-gold-300">
+              <span className="flex items-center gap-1 text-bronze-dark">
                 {Array.from({ length: 5 }, (_, s) => (
-                  <Star key={s} className={clsx("size-4", r.rating !== null && s < Math.round(r.rating / 2) ? "fill-gold-500 text-gold-500" : "text-gold-500/60")} aria-hidden="true" />
+                  <Star key={s} className={clsx("size-4", r.rating !== null && s < Math.round(r.rating / 2) ? "fill-bronze text-bronze" : "text-bronze/60")} aria-hidden="true" />
                 ))}
                 <span className="ml-1 font-semibold">{r.rating ?? "[X]"}/10</span>
               </span>
@@ -67,7 +67,7 @@ export function ReviewsCarousel({ lang }: { lang: Locale }) {
       </div>
 
       <div className="mt-6 flex items-center justify-center gap-4">
-        <button type="button" onClick={() => go(-1)} aria-label={t.prev} className="grid size-11 place-items-center rounded-full border border-white/25 bg-white/10 text-white transition hover:border-gold-500 hover:bg-gold-500 hover:text-navy-950">
+        <button type="button" onClick={() => go(-1)} aria-label={t.prev} className="grid size-11 place-items-center rounded-full border border-ink/25 bg-ink/5 text-ink transition hover:border-bronze hover:bg-bronze hover:text-white">
           <ChevronLeft className="size-5" aria-hidden="true" />
         </button>
         <div className="flex gap-1">
@@ -80,11 +80,11 @@ export function ReviewsCarousel({ lang }: { lang: Locale }) {
               aria-current={d === i}
               className="grid size-6 place-items-center"
             >
-              <span className={clsx("block h-2 rounded-full transition-all duration-300", d === i ? "w-6 bg-gold-400" : "w-2 bg-white/35")} />
+              <span className={clsx("block h-2 rounded-full transition-all duration-300", d === i ? "w-6 bg-bronze-dark" : "w-2 bg-ink/17")} />
             </button>
           ))}
         </div>
-        <button type="button" onClick={() => go(1)} aria-label={t.next} className="grid size-11 place-items-center rounded-full border border-white/25 bg-white/10 text-white transition hover:border-gold-500 hover:bg-gold-500 hover:text-navy-950">
+        <button type="button" onClick={() => go(1)} aria-label={t.next} className="grid size-11 place-items-center rounded-full border border-ink/25 bg-ink/5 text-ink transition hover:border-bronze hover:bg-bronze hover:text-white">
           <ChevronRight className="size-5" aria-hidden="true" />
         </button>
       </div>

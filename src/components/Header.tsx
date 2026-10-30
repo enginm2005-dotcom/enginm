@@ -12,12 +12,12 @@ export function Logo({ light, lang }: { light?: boolean; lang: Locale }) {
     <span className="flex items-center gap-2.5">
       {/* Знак: сграда с 10 етажа — замени с истинското лого (/public/logo.svg) */}
       <svg viewBox="0 0 28 32" className="h-8 w-7 shrink-0" aria-hidden="true">
-        <rect x="4" y="1" width="20" height="30" rx="2" className={light ? "fill-white/15" : "fill-navy-900/10"} />
+        <rect x="4" y="1" width="20" height="30" rx="2" className={light ? "fill-cream/15" : "fill-ink/10"} />
         {Array.from({ length: 10 }, (_, i) => (
-          <rect key={i} x="8" y={4 + i * 2.6} width="12" height="1.3" rx=".6" className={i === 0 ? "fill-gold-500" : light ? "fill-white" : "fill-navy-900"} />
+          <rect key={i} x="8" y={4 + i * 2.6} width="12" height="1.3" rx=".6" className={i === 0 ? "fill-bronze" : light ? "fill-cream" : "fill-ink"} />
         ))}
       </svg>
-      <span className={clsx("font-serif text-lg leading-none font-semibold sm:text-xl", light ? "text-white" : "text-navy-900")}>
+      <span className={clsx("font-serif text-lg leading-none font-semibold sm:text-xl", light ? "text-cream" : "text-ink")}>
         {lang === "en" ? hotel.nameEn : hotel.name}
       </span>
     </span>
@@ -50,13 +50,13 @@ export function Header({ lang, nav }: { lang: Locale; nav: Dict["nav"] }) {
     ["#contact", nav.contact],
   ] as const;
   const other: Locale = lang === "bg" ? "en" : "bg";
-  const light = true;
+  const light = false; // светла тема: тъмен текст
 
   return (
     <header
       className={clsx(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled ? "border-b border-white/10 bg-navy-950/88 shadow-[0_4px_30px_-12px_rgb(0_0_0/0.5)]" : "bg-transparent",
+        scrolled ? "border-b border-beige/70 bg-cream/92 shadow-[0_4px_30px_-14px_rgb(58_46_38/0.35)]" : "bg-transparent",
       )}
     >
       <nav aria-label="Main" className="container-x flex h-16 items-center justify-between gap-4 sm:h-20">
@@ -71,7 +71,7 @@ export function Header({ lang, nav }: { lang: Locale; nav: Dict["nav"] }) {
                 href={href}
                 className={clsx(
                   "rounded-full px-4 py-2 text-[15px] font-medium transition-colors",
-                  light ? "text-white/90 hover:bg-white/10 hover:text-white" : "text-navy-900/80 hover:bg-navy-900/5 hover:text-navy-900",
+                  light ? "text-white/90 hover:bg-white/10 hover:text-white" : "text-ink/80 hover:bg-ink/5 hover:text-ink",
                 )}
               >
                 {label}
@@ -87,7 +87,7 @@ export function Header({ lang, nav }: { lang: Locale; nav: Dict["nav"] }) {
             lang={other}
             className={clsx(
               "flex min-h-11 items-center rounded-full px-3 text-sm font-semibold tracking-wide transition-colors",
-              light ? "text-white hover:bg-white/10" : "text-navy-900 hover:bg-navy-900/5",
+              light ? "text-white hover:bg-white/10" : "text-ink hover:bg-ink/5",
             )}
           >
             <span className={lang === "bg" ? "" : "opacity-75"}>BG</span>
@@ -104,7 +104,7 @@ export function Header({ lang, nav }: { lang: Locale; nav: Dict["nav"] }) {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? nav.close : nav.menu}
-            className={clsx("grid size-11 place-items-center rounded-full lg:hidden", light ? "text-white hover:bg-white/10" : "text-navy-900 hover:bg-navy-900/5")}
+            className={clsx("grid size-11 place-items-center rounded-full lg:hidden", light ? "text-white hover:bg-white/10" : "text-ink hover:bg-ink/5")}
           >
             {open ? <X className="size-6" /> : <Menu className="size-6" />}
           </button>
@@ -119,12 +119,12 @@ export function Header({ lang, nav }: { lang: Locale; nav: Dict["nav"] }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto bg-navy-950/95 backdrop-blur-xl sm:top-20 lg:hidden"
+            className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto bg-cream sm:top-20 lg:hidden"
           >
             <ul className="container-x flex flex-col py-6">
               {links.map(([href, label], i) => (
                 <m.li key={href} initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.04 * i }}>
-                  <a href={href} onClick={() => setOpen(false)} className="block border-b border-white/15 py-4 font-serif text-2xl text-white">
+                  <a href={href} onClick={() => setOpen(false)} className="block border-b border-beige py-4 font-serif text-2xl text-ink">
                     {label}
                   </a>
                 </m.li>

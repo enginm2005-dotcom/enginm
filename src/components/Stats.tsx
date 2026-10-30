@@ -8,10 +8,10 @@ export function Stats({ items, lang, dark }: { items: Dict["stats"]; lang: Local
       {items.map((s, i) => (
         <Reveal key={s.label} delay={i * 0.1}>
           <dt className="sr-only">{s.label}</dt>
-          <dd className={`font-serif text-4xl sm:text-6xl ${dark ? "text-gold-300" : "text-navy-900"}`}>
+          <dd className={`font-serif text-4xl sm:text-6xl ${dark ? "text-bronze-dark" : "text-ink"}`}>
             <Counter value={s.value} suffix={s.suffix} locale={lang} />
           </dd>
-          <dd aria-hidden="true" className={`mt-2 text-sm sm:text-base ${dark ? "text-white/75" : "text-muted"}`}>{s.label}</dd>
+          <dd aria-hidden="true" className={`mt-2 text-sm sm:text-base ${dark ? "text-muted" : "text-muted"}`}>{s.label}</dd>
         </Reveal>
       ))}
     </dl>

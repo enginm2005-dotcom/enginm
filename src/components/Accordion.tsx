@@ -8,7 +8,7 @@ export function Accordion({ items, className }: { items: { q: string; a: string 
   const [open, setOpen] = useState<number | null>(0);
   const id = useId();
   return (
-    <div className={clsx("divide-y divide-white/15 border-y border-white/15", className)}>
+    <div className={clsx("divide-y divide-ink/15 border-y border-ink/15", className)}>
       {items.map((it, i) => {
         const isOpen = open === i;
         return (
@@ -20,10 +20,10 @@ export function Accordion({ items, className }: { items: { q: string; a: string 
                 aria-expanded={isOpen}
                 aria-controls={`${id}-p${i}`}
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-medium text-white transition hover:text-gold-300"
+                className="flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-medium text-ink transition hover:text-bronze-dark"
               >
                 {it.q}
-                <Plus className={clsx("size-5 shrink-0 text-gold-400 transition-transform duration-300", isOpen && "rotate-45")} aria-hidden="true" />
+                <Plus className={clsx("size-5 shrink-0 text-bronze-dark transition-transform duration-300", isOpen && "rotate-45")} aria-hidden="true" />
               </button>
             </h4>
             <AnimatePresence initial={false}>

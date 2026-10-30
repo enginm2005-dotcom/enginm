@@ -62,7 +62,7 @@ export function Gallery({ lang }: { lang: Locale }) {
                 sizes="(min-width:1024px) 33vw, 50vw"
                 className="h-auto w-full transition duration-700 group-hover:scale-105"
               />
-              <span className="absolute inset-0 bg-navy-950/0 transition group-hover:bg-navy-950/20" />
+              <span className="absolute inset-0 bg-espresso/0 transition group-hover:bg-espresso/20" />
             </button>
           </li>
         ))}
@@ -75,7 +75,7 @@ export function Gallery({ lang }: { lang: Locale }) {
             role="dialog"
             aria-modal="true"
             aria-label={t.galleryAlts[open]}
-            className="fixed inset-0 z-[70] flex items-center justify-center bg-navy-950/95 p-4"
+            className="fixed inset-0 z-[70] flex items-center justify-center bg-espresso/95 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -84,14 +84,14 @@ export function Gallery({ lang }: { lang: Locale }) {
             <m.div key={open} initial={{ scale: 0.96, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="relative h-[80vh] w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
               <Image src={list[open].src} alt={t.galleryAlts[open] ?? ""} fill sizes="100vw" className="object-contain" />
             </m.div>
-            <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm text-white/80">{t.galleryAlts[open]} · {open + 1}/{list.length}</p>
-            <button ref={closeRef} type="button" onClick={close} aria-label={t.closePhoto} className="absolute top-4 right-4 grid size-12 place-items-center rounded-full bg-white/10 text-white hover:bg-white/20">
+            <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm text-cream/80">{t.galleryAlts[open]} · {open + 1}/{list.length}</p>
+            <button ref={closeRef} type="button" onClick={close} aria-label={t.closePhoto} className="absolute top-4 right-4 grid size-12 place-items-center rounded-full bg-cream/10 text-cream hover:bg-cream/20">
               <X className="size-6" aria-hidden="true" />
             </button>
-            <button type="button" onClick={(e) => { e.stopPropagation(); step(-1); }} aria-label={t.prevPhoto} className="absolute left-3 grid size-12 place-items-center rounded-full bg-white/10 text-white hover:bg-white/20">
+            <button type="button" onClick={(e) => { e.stopPropagation(); step(-1); }} aria-label={t.prevPhoto} className="absolute left-3 grid size-12 place-items-center rounded-full bg-cream/10 text-cream hover:bg-cream/20">
               <ChevronLeft className="size-6" aria-hidden="true" />
             </button>
-            <button type="button" onClick={(e) => { e.stopPropagation(); step(1); }} aria-label={t.nextPhoto} className="absolute right-3 grid size-12 place-items-center rounded-full bg-white/10 text-white hover:bg-white/20">
+            <button type="button" onClick={(e) => { e.stopPropagation(); step(1); }} aria-label={t.nextPhoto} className="absolute right-3 grid size-12 place-items-center rounded-full bg-cream/10 text-cream hover:bg-cream/20">
               <ChevronRight className="size-6" aria-hidden="true" />
             </button>
           </m.div>

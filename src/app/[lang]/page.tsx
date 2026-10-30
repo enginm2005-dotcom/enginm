@@ -24,7 +24,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
   return (
     <>
-      <a href="#main" className="sr-only z-[100] rounded-full bg-gold-500 px-5 py-3 font-semibold text-navy-950 focus:not-sr-only focus:fixed focus:top-3 focus:left-3">
+      <a href="#main" className="sr-only z-[100] rounded-full bg-bronze px-5 py-3 font-semibold text-cream focus:not-sr-only focus:fixed focus:top-3 focus:left-3">
         {t.skip}
       </a>
       <ScrollScene labels={t.scene} />

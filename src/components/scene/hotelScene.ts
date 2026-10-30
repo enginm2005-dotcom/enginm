@@ -87,31 +87,31 @@ const std = (color: string, o: Partial<THREE.MeshStandardMaterialParameters> = {
 const basic = (color: string) => new THREE.MeshBasicMaterial({ color });
 
 const M = {
-  white: std("#f5f3ef", { roughness: 0.55 }),
-  concrete: std("#e8e4dd", { roughness: 0.8 }),
-  wood: std("#b5814f", { roughness: 0.5 }),
-  woodLight: std("#d9b285", { roughness: 0.5 }),
+  white: std("#f1eee8", { roughness: 0.55 }),
+  concrete: std("#e6dfd5", { roughness: 0.8 }),
+  wood: std("#8d705b", { roughness: 0.5 }),
+  woodLight: std("#d6c3ad", { roughness: 0.5 }),
   marble: std("#f2eee7", { roughness: 0.22 }),
-  gold: std("#d0a85c", { metalness: 0.7, roughness: 0.3 }),
+  gold: std("#a8876b", { metalness: 0.6, roughness: 0.35 }),
   glass: new THREE.MeshStandardMaterial({ color: "#9fcbe0", transparent: true, opacity: 0.3, roughness: 0.05, metalness: 0.3, depthWrite: false, side: THREE.DoubleSide }),
   rail: new THREE.MeshStandardMaterial({ color: "#dff1f7", transparent: true, opacity: 0.32, roughness: 0.05, depthWrite: false, side: THREE.DoubleSide }),
   water: std("#38bfe0", { roughness: 0.08, metalness: 0.1, emissive: "#0b5f78", emissiveIntensity: 0.35 }),
   lamp: basic("#fff3d6"),
-  cream: std("#efe5d3", { roughness: 0.9 }),
+  cream: std("#e8dccd", { roughness: 0.9 }),
   linen: std("#fbfaf7", { roughness: 0.95 }),
-  navy: std("#2c4c6e", { roughness: 0.85 }),
-  sage: std("#9db39a", { roughness: 0.9 }),
-  plant: std("#5d8f55", { roughness: 0.9 }),
+  navy: std("#6e5544", { roughness: 0.85 }),
+  sage: std("#8a9a7e", { roughness: 0.9 }),
+  plant: std("#6f8463", { roughness: 0.9 }),
   pot: std("#d9d2c5", { roughness: 0.7 }),
   dark: std("#2a2f36", { roughness: 0.6 }),
-  terracotta: std("#cf8a64", { roughness: 0.8 }),
+  terracotta: std("#b8957a", { roughness: 0.8 }),
   stone: std("#cfc8bc", { roughness: 0.7 }),
   teal: std("#8fbfbf", { roughness: 0.7 }),
   mirror: std("#e3e9ed", { roughness: 0.25, metalness: 0.15 }),
   rubber: std("#4a4f57", { roughness: 0.95 }),
   sand: std("#f0e1c1", { roughness: 1 }),
   paving: std("#ece7de", { roughness: 0.95 }),
-  lawn: std("#9fc184", { roughness: 1 }),
+  lawn: std("#a3b08f", { roughness: 1 }),
   sea: std("#2f9fc8", { roughness: 0.18, metalness: 0.15 }),
   trunk: std("#9a7a5a", { roughness: 1 }),
 };
@@ -186,7 +186,7 @@ function buildSky(scene: THREE.Scene) {
     toneMapped: false,
     uniforms: {
       top: { value: new THREE.Color("#5fa8e6") },
-      horizon: { value: new THREE.Color("#fdeedd") },
+      horizon: { value: new THREE.Color("#f4ece2") },
       bottom: { value: new THREE.Color("#eef3f5") },
     },
     vertexShader: "varying vec3 vW; void main(){ vec4 w = modelMatrix*vec4(position,1.); vW = w.xyz; gl_Position = projectionMatrix*viewMatrix*w; }",
@@ -231,7 +231,7 @@ function buildGround(p: Parent) {
       const x = sx * (19.5 + r() * 4);
       const h = 6 + r() * 3;
       trunks.push({ pos: [x, h / 2, z], scale: [0.22, h, 0.22] });
-      crowns.push({ pos: [x, h + 0.4, z], scale: [2.3, 0.9, 2.3], color: r() > 0.5 ? "#5d8f55" : "#6c9c5c" });
+      crowns.push({ pos: [x, h + 0.4, z], scale: [2.3, 0.9, 2.3], color: r() > 0.5 ? "#6f8463" : "#7d8f6e" });
     }
   instanced(CYL, M.trunk, p, trunks);
   instanced(SPH, M.plant, p, crowns);
@@ -619,7 +619,7 @@ export async function createHotelScene(canvas: HTMLCanvasElement, opts: { mobile
   renderer.toneMappingExposure = 1.05;
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog("#f6ecdf", 140, 650);
+  scene.fog = new THREE.Fog("#f1eee8", 140, 650);
   const sky = buildSky(scene);
 
   scene.add(new THREE.HemisphereLight("#e4f1ff", "#e9dcc6", 1.6));

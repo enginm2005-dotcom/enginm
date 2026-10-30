@@ -24,11 +24,11 @@ export function Worries({ t }: { t: Dict["worries"] }) {
             return (
               <Reveal as="li" key={w.key} delay={(i % 3) * 0.08}>
                 <div className="card group flex h-full gap-4 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lift">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-full bg-gold-500/20 text-gold-300 transition group-hover:bg-gold-500 group-hover:text-navy-950">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-full bg-sage/20 text-bronze-dark transition group-hover:bg-bronze group-hover:text-white">
                     <Icon className="size-5" aria-hidden="true" />
                   </span>
                   <div>
-                    <h3 className="font-sans text-base leading-snug font-semibold text-white">{w.q}</h3>
+                    <h3 className="font-sans text-base leading-snug font-semibold text-ink">{w.q}</h3>
                     <p className="mt-2 text-muted">{w.a}</p>
                   </div>
                 </div>

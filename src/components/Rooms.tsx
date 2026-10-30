@@ -40,32 +40,32 @@ export function Rooms({ t }: { t: Dict["rooms"] }) {
                     className="object-cover transition duration-700 group-hover:scale-105"
                   />
                   {r.key === "penthouse" && (
-                    <span className="absolute top-4 left-4 rounded-full bg-gold-500 px-3 py-1 text-xs font-bold tracking-wide text-navy-950">10F</span>
+                    <span className="absolute top-4 left-4 rounded-full bg-bronze px-3 py-1 text-xs font-bold tracking-wide text-white">10F</span>
                   )}
                 </div>
                 <div className="flex flex-1 flex-col gap-0 p-6 [&>ul]:mb-6">
                   <h3 className="text-2xl">{r.name}</h3>
                   <p className="mt-2 text-muted">{r.desc}</p>
 
-                  <div className="mt-4 flex gap-5 text-sm text-white/90">
-                    <span className="flex items-center gap-1.5"><Maximize2 className="size-4 text-gold-600" aria-hidden="true" />{r.size} {t.m2}</span>
-                    <span className="flex items-center gap-1.5"><Users className="size-4 text-gold-600" aria-hidden="true" />{t.upTo} {r.guests} {t.guests}</span>
+                  <div className="mt-4 flex gap-5 text-sm text-ink">
+                    <span className="flex items-center gap-1.5"><Maximize2 className="size-4 text-bronze-dark" aria-hidden="true" />{r.size} {t.m2}</span>
+                    <span className="flex items-center gap-1.5"><Users className="size-4 text-bronze-dark" aria-hidden="true" />{t.upTo} {r.guests} {t.guests}</span>
                   </div>
 
-                  <ul className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-sm text-white/80">
+                  <ul className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-sm text-muted">
                     {r.features.map((f, j) => {
                       const Icon = icons[j] ?? BedDouble;
                       return (
                         <li key={f} className="flex items-center gap-2">
-                          <Icon className="size-4 shrink-0 text-gold-300" aria-hidden="true" />{f}
+                          <Icon className="size-4 shrink-0 text-bronze-dark" aria-hidden="true" />{f}
                         </li>
                       );
                     })}
                   </ul>
 
-                  <div className="mt-auto flex items-end justify-between gap-3 border-t border-white/15 pt-5">
-                    <p className="font-serif text-lg whitespace-nowrap text-white">{r.price}</p>
-                    <a href="#book" className="group/link flex items-center gap-1 text-sm font-semibold whitespace-nowrap text-gold-300 hover:text-white">
+                  <div className="mt-auto flex items-end justify-between gap-3 border-t border-ink/15 pt-5">
+                    <p className="font-serif text-lg whitespace-nowrap text-ink">{r.price}</p>
+                    <a href="#book" className="group/link flex items-center gap-1 text-sm font-semibold whitespace-nowrap text-bronze-dark hover:text-ink">
                       {t.cta}
                       <ArrowRight className="size-4 transition group-hover/link:translate-x-1" aria-hidden="true" />
                     </a>

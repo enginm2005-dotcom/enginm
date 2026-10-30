@@ -38,13 +38,13 @@ export function BookingForm({ lang }: { lang: Locale }) {
     }
   };
 
-  const field = "mt-1.5 block h-12 w-full rounded-xl border border-navy-900/15 bg-white px-4 text-base text-navy-900 transition focus:border-gold-500 focus:ring-4 focus:ring-gold-500/25 focus:outline-none";
-  const label = "flex items-center gap-1.5 text-sm font-medium text-navy-800";
+  const field = "mt-1.5 block h-12 w-full rounded-xl border border-beige bg-white px-4 text-base text-ink transition focus:border-bronze focus:ring-4 focus:ring-bronze/25 focus:outline-none";
+  const label = "flex items-center gap-1.5 text-sm font-medium text-ink";
 
   return (
-    <form onSubmit={submit} noValidate className="grid gap-4 rounded-3xl bg-sand-50/95 p-5 shadow-lift sm:grid-cols-2 sm:p-6 lg:grid-cols-[1fr_1fr_0.8fr_auto] lg:items-end">
+    <form onSubmit={submit} noValidate className="grid gap-4 rounded-3xl bg-cream/95 p-5 shadow-lift sm:grid-cols-2 sm:p-6 lg:grid-cols-[1fr_1fr_0.8fr_auto] lg:items-end">
       <div>
-        <label htmlFor="checkin" className={label}><CalendarDays className="size-4 text-gold-700" aria-hidden="true" />{t.checkin}</label>
+        <label htmlFor="checkin" className={label}><CalendarDays className="size-4 text-bronze-dark" aria-hidden="true" />{t.checkin}</label>
         <input
           id="checkin"
           type="date"
@@ -60,7 +60,7 @@ export function BookingForm({ lang }: { lang: Locale }) {
         />
       </div>
       <div>
-        <label htmlFor="checkout" className={label}><CalendarDays className="size-4 text-gold-700" aria-hidden="true" />{t.checkout}</label>
+        <label htmlFor="checkout" className={label}><CalendarDays className="size-4 text-bronze-dark" aria-hidden="true" />{t.checkout}</label>
         <input
           id="checkout"
           type="date"
@@ -73,7 +73,7 @@ export function BookingForm({ lang }: { lang: Locale }) {
         />
       </div>
       <div>
-        <label htmlFor="guests" className={label}><Users className="size-4 text-gold-700" aria-hidden="true" />{t.guests}</label>
+        <label htmlFor="guests" className={label}><Users className="size-4 text-bronze-dark" aria-hidden="true" />{t.guests}</label>
         <select id="guests" value={guests} onChange={(e) => setGuests(Number(e.target.value))} className={field}>
           {[1, 2, 3, 4, 5, 6].map((n) => (
             <option key={n} value={n}>{t.guestUnit(n)}</option>

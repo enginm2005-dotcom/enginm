@@ -16,7 +16,7 @@ const playfair = Playfair_Display({ subsets: ["cyrillic"], variable: "--font-pla
 export const generateStaticParams = () => locales.map((lang) => ({ lang }));
 export const dynamicParams = false;
 
-export const viewport: Viewport = { themeColor: "#0f2a44", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#f1eee8", width: "device-width", initialScale: 1 };
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
