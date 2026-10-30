@@ -2,9 +2,9 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Фиксиран 3D фон (Three.js), чиято камера се движи със скрола:
- * отвън → в рецепцията → обратно навън → етаж по етаж → покрива.
- * Самата сцена е в ./scene/hotelScene.ts и се зарежда отложено, за да не бави първото показване.
+ * Фиксиран фон: „камера“ върху истинската снимка на хотела, движена от скрола:
+ * целият хотел → в рецепцията → навън към улицата → етаж по етаж → козирката → целият хотел.
+ * Логиката е в ./scene/photoScene.ts и се зарежда отложено, за да не бави първото показване.
  *
  * ANCHORS връзва секции от страницата с ключови кадри от пътя на камерата.
  */
@@ -21,7 +21,7 @@ const ANCHORS: [id: string | null, key: string][] = [
   ["book", "final"],
 ];
 
-export type SceneLabels = { floor: string; names: string[] }; // names[0] = рецепция, [1..N] = етажи, [N+1] = покрив
+export type SceneLabels = { floor: string; names: string[] }; // names[0] = рецепция, [1..N] = етажи
 
 export function ScrollScene({ labels }: { labels: SceneLabels }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -33,19 +33,18 @@ export function ScrollScene({ labels }: { labels: SceneLabels }) {
     const canvas = canvasRef.current!;
     const box = canvas.parentElement!;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const mobile = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
     let alive = true;
     let raf = 0;
     let cleanup = () => {};
 
     const start = async () => {
-      const mod = await import("./scene/hotelScene");
+      const mod = await import("./scene/photoScene");
       if (!alive) return;
-      let scene: Awaited<ReturnType<typeof mod.createHotelScene>>;
+      let scene: Awaited<ReturnType<typeof mod.createPhotoScene>>;
       try {
-        scene = await mod.createHotelScene(canvas, { mobile });
+        scene = await mod.createPhotoScene(canvas, { src: "/scene/hotel.webp" });
       } catch {
-        return; // без WebGL остава постерът
+        return; // ако снимката не се зареди, остава постерът
       }
       if (!alive) return scene.dispose();
 
@@ -159,14 +158,14 @@ export function ScrollScene({ labels }: { labels: SceneLabels }) {
   return (
     <>
       <div aria-hidden="true" className="pointer-events-none fixed top-0 left-0 -z-10 h-[100lvh] w-full overflow-hidden bg-cream">
-        {/* постер: първият кадър, докато 3D сцената се зареди */}
+        {/* постер: първият кадър, докато фонът се зареди */}
         <picture>
           <source media="(max-width: 767px)" srcSet="/scene/poster-m.webp" />
           <img src="/scene/poster-d.webp" alt="" fetchPriority="high" decoding="async" className="absolute inset-0 size-full object-cover" />
         </picture>
         <canvas ref={canvasRef} className="absolute inset-0 size-full opacity-0 transition-opacity duration-500 data-[ready]:opacity-100" />
-        {/* затъмняване за четимост на белия текст */}
-        <div className="absolute inset-0 bg-gradient-to-b from-cream/45 via-cream/55 to-cream/70" />
+        {/* лек воал — текстът е върху светли панели, снимката остава ясна */}
+        <div className="absolute inset-0 bg-gradient-to-b from-cream/10 via-cream/15 to-cream/30" />
       </div>
 
       {/* индикатор на етажа */}

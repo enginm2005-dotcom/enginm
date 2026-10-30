@@ -28,7 +28,7 @@ export function FloorView({ t }: { t: Dict["floors"] }) {
   return (
     <section id="floors" aria-labelledby="floors-title" className="section-y overflow-hidden text-ink">
       <div className="container-x">
-        <Reveal className="max-w-2xl">
+        <Reveal className="scrim max-w-2xl">
           <p className="eyebrow !text-bronze-dark">{t.eyebrow}</p>
           <h2 id="floors-title" className="heading-2 !text-ink">{t.title}</h2>
           <p className="lead !text-muted">{t.lead}</p>
@@ -106,7 +106,7 @@ export function FloorView({ t }: { t: Dict["floors"] }) {
           </div>
 
           {/* Описание */}
-          <div className="col-span-2 lg:col-span-1" aria-live="polite">
+          <div className="scrim col-span-2 lg:col-span-1" aria-live="polite">
             <AnimatePresence mode="wait">
               <m.div key={group.from} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.3 }}>
                 <h3 className="text-2xl !text-ink sm:text-3xl">{group.title}</h3>

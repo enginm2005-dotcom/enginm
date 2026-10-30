@@ -12,7 +12,7 @@ export function Worries({ t }: { t: Dict["worries"] }) {
   return (
     <section id="faq" aria-labelledby="worries-title" className="section-y">
       <div className="container-x">
-        <Reveal className="max-w-2xl">
+        <Reveal className="scrim max-w-2xl">
           <p className="eyebrow">{t.eyebrow}</p>
           <h2 id="worries-title" className="heading-2">{t.title}</h2>
           <p className="lead">{t.lead}</p>
@@ -37,7 +37,7 @@ export function Worries({ t }: { t: Dict["worries"] }) {
           })}
         </ul>
 
-        <div className="mx-auto mt-20 max-w-3xl">
+        <div className="card mx-auto mt-20 max-w-3xl p-6 sm:p-10">
           <Reveal>
             <h3 className="text-center text-3xl">{t.faqTitle}</h3>
           </Reveal>

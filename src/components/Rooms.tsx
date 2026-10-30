@@ -17,7 +17,7 @@ export function Rooms({ t }: { t: Dict["rooms"] }) {
   return (
     <section id="rooms" aria-labelledby="rooms-title" className="section-y">
       <div className="container-x">
-        <Reveal>
+        <Reveal className="scrim">
           <p className="eyebrow">{t.eyebrow}</p>
           <h2 id="rooms-title" className="heading-2">{t.title}</h2>
           <p className="lead">{t.lead}</p>

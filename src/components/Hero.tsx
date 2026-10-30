@@ -4,6 +4,7 @@ import type { Dict } from "@/i18n";
 export function Hero({ t }: { t: Dict["hero"] }) {
   return (
     <section aria-labelledby="hero-title" className="relative isolate flex min-h-[100svh] items-end overflow-hidden pb-28 sm:items-center sm:pb-0">
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-cream/95 via-cream/80 via-60% to-cream/10 to-95% sm:bg-gradient-to-r sm:from-cream/95 sm:via-cream/75 sm:via-35% sm:to-transparent sm:to-60%" />
       <div className="container-x pt-28">
         <div className="max-w-2xl">
           <p className="animate-rise text-xs font-semibold tracking-[0.22em] text-bronze-dark uppercase sm:text-sm">{t.eyebrow}</p>

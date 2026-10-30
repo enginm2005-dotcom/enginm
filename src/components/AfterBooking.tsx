@@ -17,7 +17,7 @@ export function AfterBooking({ t }: { t: Dict["after"] }) {
   return (
     <section id="how" aria-labelledby="how-title" className="section-y">
       <div className="container-x grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
-        <Reveal className="lg:sticky lg:top-32 lg:self-start">
+        <Reveal className="scrim lg:sticky lg:top-32 lg:self-start">
           <p className="eyebrow">{t.eyebrow}</p>
           <h2 id="how-title" className="heading-2">{t.title}</h2>
           <p className="lead">{t.lead}</p>

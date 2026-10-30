@@ -17,7 +17,7 @@ export function Proof({ t, lang }: { t: Dict["proof"]; lang: Locale }) {
   return (
     <section id="reviews" aria-labelledby="reviews-title" className="section-y">
       <div className="container-x">
-        <Reveal className="max-w-2xl">
+        <Reveal className="scrim max-w-2xl">
           <p className="eyebrow">{t.eyebrow}</p>
           <h2 id="reviews-title" className="heading-2">{t.title}</h2>
         </Reveal>
@@ -54,7 +54,7 @@ export function Proof({ t, lang }: { t: Dict["proof"]; lang: Locale }) {
         </div>
 
         {/* Награди */}
-        <Reveal className="mt-16 text-center">
+        <Reveal className="scrim mx-auto mt-16 text-center">
           <h3 className="font-sans text-sm font-semibold tracking-[0.2em] text-muted uppercase">{t.awardsTitle}</h3>
           <ul className="mt-6 flex flex-wrap justify-center gap-3">
             {t.awards.map((a) => (
@@ -66,7 +66,7 @@ export function Proof({ t, lang }: { t: Dict["proof"]; lang: Locale }) {
         </Reveal>
 
         {/* Галерия */}
-        <Reveal className="mt-20">
+        <Reveal className="scrim mt-20">
           <h3 className="text-3xl sm:text-4xl">{t.galleryTitle}</h3>
         </Reveal>
         <Gallery lang={lang} />

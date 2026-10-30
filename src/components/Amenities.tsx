@@ -11,7 +11,7 @@ export function Amenities({ t }: { t: Dict["amenities"] }) {
   return (
     <section id="amenities" aria-labelledby="amenities-title" className="section-y">
       <div className="container-x">
-        <Reveal className="text-center">
+        <Reveal className="scrim mx-auto text-center">
           <p className="eyebrow">{t.eyebrow}</p>
           <h2 id="amenities-title" className="heading-2">{t.title}</h2>
           <p className="lead mx-auto">{t.lead}</p>

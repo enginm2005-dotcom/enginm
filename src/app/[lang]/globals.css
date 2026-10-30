@@ -115,6 +115,11 @@
   @apply btn bg-espresso text-cream hover:-translate-y-0.5 hover:bg-ink;
 }
 
+/* светъл панел зад текст, който стои директно върху снимката на фона */
+@utility scrim {
+  @apply w-fit max-w-full rounded-3xl bg-cream/90 px-5 py-4 shadow-card sm:px-8 sm:py-6;
+}
+
 @utility card {
   @apply rounded-3xl border border-beige/70 bg-cream/90 text-ink shadow-card;
 }
