@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { AirVent, ArrowRight, Bath, BedDouble, Coffee, DoorOpen, Eye, Maximize2, ShowerHead, Sun, Users, Wifi, type LucideIcon } from "lucide-react";
+import { hotel } from "@/config/hotel";
 import { images } from "@/config/images";
 import type { Dict } from "@/i18n";
 import { Reveal } from "./Reveal";
@@ -40,7 +41,7 @@ export function Rooms({ t }: { t: Dict["rooms"] }) {
                     className="object-cover transition duration-700 group-hover:scale-105"
                   />
                   {r.key === "penthouse" && (
-                    <span className="absolute top-4 left-4 rounded-full bg-bronze px-3 py-1 text-xs font-bold tracking-wide text-white">10F</span>
+                    <span className="absolute top-4 left-4 rounded-full bg-bronze px-3 py-1 text-xs font-bold tracking-wide text-white">{hotel.floors}F</span>
                   )}
                 </div>
                 <div className="flex flex-1 flex-col gap-0 p-6 [&>ul]:mb-6">

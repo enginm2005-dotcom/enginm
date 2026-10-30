@@ -9,7 +9,7 @@ export const en: Dict = {
   locale: "en_US",
   meta: {
     title: `${name} — sea-view hotel in ${h.areaLabel.en}`,
-    description: `A 10-floor hotel in ${h.areaLabel.en}, ${h.beachDistance.en} to the beach. Sea-view rooms, pool, spa and a rooftop bar. Free cancellation and best price when you book direct.`,
+    description: `A boutique hotel with ${h.floors} floors in ${h.areaLabel.en}, ${h.beachDistance.en} to the beach. Sea-view rooms, pool, spa and a rooftop bar. Free cancellation and best price when you book direct.`,
   },
   skip: "Skip to content",
   nav: {
@@ -26,7 +26,7 @@ export const en: Dict = {
   },
   hero: {
     eyebrow: `${h.areaLabel.en} · ${h.beachDistance.en} to the beach`,
-    title: "Wake up to a sea view from the 10th floor",
+    title: `Wake up to a sea view from the ${h.floors}th floor`,
     subtitle: `${name} is a calm hotel for couples and families who want the sea, comfort and quiet — just ${h.beachDistance.en} from the beach.`,
     primary: "Check availability",
     secondary: "See the rooms",
@@ -50,7 +50,7 @@ export const en: Dict = {
       { key: "standard", name: "[Standard Room]", desc: "Everything you need for a relaxed stay. Perfect for two.", size: "[XX]", guests: 2, price: price(h.prices.standard), features: ["Wi-Fi", "Air con", "Shower", "Balcony"], alt: "Bright double room with white bedding" },
       { key: "deluxe", name: "[Deluxe Room]", desc: "More space and a direct view of the sea.", size: "[XX]", guests: 3, price: price(h.prices.deluxe), features: ["Sea view", "Wi-Fi", "Bathtub", "Balcony"], alt: "Deluxe room with a large window" },
       { key: "suite", name: "[Suite]", desc: "Separate bedroom and living room. Room for the whole family.", size: "[XX]", guests: 4, price: price(h.prices.suite), features: ["2 rooms", "Sea view", "Bathtub", "Coffee machine"], alt: "Suite with living room and bedroom" },
-      { key: "penthouse", name: "[10th-Floor Penthouse]", desc: "The highest point of the hotel. 180° panorama and a private terrace.", size: "[XX]", guests: 4, price: price(h.prices.penthouse), features: ["Terrace", "180° view", "Bathtub", "Coffee machine"], alt: "Penthouse with terrace and panoramic view" },
+      { key: "penthouse", name: `[${h.floors}th-Floor Penthouse]`, desc: "The whole top floor, under the lit canopy. Panoramic views and a big terrace.", size: "[XX]", guests: 4, price: price(h.prices.penthouse), features: ["Terrace", "180° view", "Bathtub", "Coffee machine"], alt: "Penthouse with terrace and panoramic view" },
     ],
   },
   floors: {
@@ -60,10 +60,10 @@ export const en: Dict = {
     floorLabel: "floor",
     pick: "Choose a floor",
     groups: [
-      { from: 1, to: 3, title: "Floors 1–3: garden and pool", text: "Greenery, the pool right below and no need for the lift.", rooms: "Standard rooms" },
-      { from: 4, to: 6, title: "Floors 4–6: sea above the rooftops", text: "The sea shows up above the trees. A great balance of view and price.", rooms: "Standard and deluxe rooms" },
-      { from: 7, to: 9, title: "Floors 7–9: open sea", text: "Nothing in front of you but the horizon. Sunrise right across your balcony.", rooms: "Deluxe rooms and suites" },
-      { from: 10, to: 10, title: "Floor 10: 180° panorama", text: "The whole bay in front of you, plus a private terrace. The quietest floor.", rooms: "Penthouse" },
+      { from: 1, to: 1, title: "Floor 1: the restaurant", text: "The whole floor is glass. Breakfast and dinner with a view of the street and trees.", rooms: "Restaurant and lobby bar" },
+      { from: 2, to: 3, title: "Floors 2–3: sea above the trees", text: "Your own balcony with a glass railing, and the sea above the treetops.", rooms: "Standard and deluxe rooms" },
+      { from: 4, to: 4, title: "Floor 4: open sea", text: "Nothing in front of you but the horizon. Sunrise right across your balcony.", rooms: "Suites" },
+      { from: 5, to: 5, title: "Floor 5: under the lit canopy", text: "The highest and quietest floor, with a wide terrace and panoramic views.", rooms: "Penthouse" },
     ],
     alt: "Sea view from floor",
   },
@@ -79,7 +79,7 @@ export const en: Dict = {
       { key: "parking", name: "Parking", text: "[On-site / garage]" },
       { key: "wifi", name: "Fast Wi-Fi", text: "Free, everywhere" },
       { key: "gym", name: "Gym", text: "Open [24/7]" },
-      { key: "bar", name: "Rooftop bar", text: "Sunset from the 10th floor" },
+      { key: "bar", name: "Rooftop bar", text: "Sunset over the sea" },
       { key: "roomservice", name: "Room service", text: "[Hours]" },
       { key: "kids", name: "Kids' corner", text: "Games and entertainers [seasonal]" },
     ],
@@ -91,7 +91,7 @@ export const en: Dict = {
       { time: "08:30", title: "Breakfast, no rush", text: "Coffee, fresh fruit and a sea view.", img: "breakfast", alt: "Breakfast with coffee and eggs" },
       { time: "11:00", title: "Pool or beach", text: `The beach is ${h.beachDistance.en} away. The pool is a lift ride down.`, img: "pool", alt: "Pool with sunbeds" },
       { time: "19:30", title: "Dinner at the restaurant", text: "Local produce and a table on the terrace.", img: "dinner", alt: "Set table in a restaurant" },
-      { time: "21:00", title: "Sunset from the roof", text: "A cocktail on the 10th floor while the sky turns orange.", img: "sunset", alt: "Bar with cocktails in the evening" },
+      { time: "21:00", title: "Sunset from the roof", text: "A rooftop cocktail while the sky turns orange.", img: "sunset", alt: "Bar with cocktails in the evening" },
     ],
   },
   worries: {
@@ -105,7 +105,7 @@ export const en: Dict = {
       { key: "noise", q: "Will it be noisy?", a: "[Soundproof windows, quiet hours 23:00–08:00, calm neighbourhood.]" },
       { key: "clean", q: "Is it clean?", a: `Daily housekeeping. Fresh linen and towels every ${orX(h.linenChangeDays)} days.` },
       { key: "parking", q: "Is there parking?", a: "[On-site parking / garage — price: €X per day.]" },
-      { key: "elevator", q: "10 floors — will I wait for the lift?", a: `No. We have ${orX(h.elevators)} fast lifts.` },
+      { key: "elevator", q: `${h.floors} floors — will I wait for the lift?`, a: `No. We have ${orX(h.elevators)} fast lifts.` },
       { key: "late", q: "What if I arrive late?", a: "Reception is open 24/7. We'll welcome you at any hour." },
       { key: "kids", q: "Is it good for kids and pets?", a: "[Kids: yes — cots and a kids' corner. Pets: yes/no, conditions.]" },
     ],
@@ -185,7 +185,7 @@ export const en: Dict = {
     imgAlt: "Sunset over the sea seen from above",
   },
   footer: {
-    tagline: "10 floors of sea, quiet and a warm welcome.",
+    tagline: `${h.floors} floors of sea, quiet and a warm welcome.`,
     address: "Address",
     contact: "Contact",
     reception: "Reception",
@@ -206,7 +206,7 @@ export const en: Dict = {
   sticky: { book: "Book", call: "Call", whatsapp: "WhatsApp" },
   scene: {
     floor: "Floor",
-    names: ["Reception", "Restaurant", "Spa & pool", "Gym", "Kids' club", "Standard rooms", "Deluxe rooms", "Suites", "Lounge & library", "Conference room", "Penthouse", "Rooftop bar"],
+    names: ["Reception", "Restaurant", "Standard rooms", "Deluxe rooms", "Suites", "Penthouse", "Rooftop terrace"],
   },
   legal: {
     back: "Back to home",

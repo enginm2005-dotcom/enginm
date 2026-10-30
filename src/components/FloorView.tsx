@@ -7,10 +7,10 @@ import { images } from "@/config/images";
 import type { Dict } from "@/i18n";
 import { Reveal } from "./Reveal";
 
-const FLOORS = 10;
 
 export function FloorView({ t }: { t: Dict["floors"] }) {
-  const [floor, setFloor] = useState(8);
+  const FLOORS = Math.max(...t.groups.map((g) => g.to));
+  const [floor, setFloor] = useState(FLOORS - 1);
   const btns = useRef<(HTMLButtonElement | null)[]>([]);
   const group = t.groups.find((g) => floor >= g.from && floor <= g.to)!;
   const k = (floor - 1) / (FLOORS - 1); // 0 → 1

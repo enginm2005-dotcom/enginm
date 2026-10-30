@@ -10,11 +10,11 @@ import type { Dict, Locale } from "@/i18n";
 export function Logo({ light, lang }: { light?: boolean; lang: Locale }) {
   return (
     <span className="flex items-center gap-2.5">
-      {/* Знак: сграда с 10 етажа — замени с истинското лого (/public/logo.svg) */}
+      {/* Знак: сградата (партер + етажи) — замени с истинското лого (/public/logo.svg) */}
       <svg viewBox="0 0 28 32" className="h-8 w-7 shrink-0" aria-hidden="true">
         <rect x="4" y="1" width="20" height="30" rx="2" className={light ? "fill-cream/15" : "fill-ink/10"} />
-        {Array.from({ length: 10 }, (_, i) => (
-          <rect key={i} x="8" y={4 + i * 2.6} width="12" height="1.3" rx=".6" className={i === 0 ? "fill-bronze" : light ? "fill-cream" : "fill-ink"} />
+        {Array.from({ length: hotel.floors + 1 }, (_, i) => (
+          <rect key={i} x="8" y={4 + i * (26 / (hotel.floors + 1))} width="12" height={13 / (hotel.floors + 1)} rx=".6" className={i === 0 ? "fill-bronze" : light ? "fill-cream" : "fill-ink"} />
         ))}
       </svg>
       <span className={clsx("font-serif text-lg leading-none font-semibold sm:text-xl", light ? "text-cream" : "text-ink")}>

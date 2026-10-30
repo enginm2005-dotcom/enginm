@@ -8,7 +8,7 @@ export const hotel = {
   name: "[ИМЕ НА ХОТЕЛА]",
   nameEn: "[HOTEL NAME]",
   siteUrl: "https://www.example.com", // [ДОМЕЙН] — без наклонена черта накрая
-  floors: 10,
+  floors: 5, // етажи над партера (рецепцията); 3D моделът е по референтната снимка
   stars: null as number | null, // [X] звезди — за schema.org
   rooms: null as number | null, // [X] стаи
   happyGuests: null as number | null, // [X]+ доволни гости

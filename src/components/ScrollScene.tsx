@@ -14,14 +14,14 @@ const ANCHORS: [id: string | null, key: string][] = [
   ["rooms", "lobby"],
   ["floors", "turn"],
   ["amenities", "f1"],
-  ["day", "f3"],
-  ["faq", "f5"],
-  ["reviews", "f7"],
-  ["how", "f9"],
+  ["day", "f2"],
+  ["faq", "f3"],
+  ["reviews", "f4"],
+  ["how", "f5"],
   ["book", "final"],
 ];
 
-export type SceneLabels = { floor: string; names: string[] }; // names[0] = рецепция, [1..10] = етажи, [11] = покрив
+export type SceneLabels = { floor: string; names: string[] }; // names[0] = рецепция, [1..N] = етажи, [N+1] = покрив
 
 export function ScrollScene({ labels }: { labels: SceneLabels }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -89,7 +89,7 @@ export function ScrollScene({ labels }: { labels: SceneLabels }) {
           chip.dataset.show = "0";
           return;
         }
-        numRef.current!.textContent = label >= 1 && label <= 10 ? `${labels.floor} ${label}` : "";
+        numRef.current!.textContent = label >= 1 && label <= labels.names.length - 2 ? `${labels.floor} ${label}` : "";
         nameRef.current!.textContent = labels.names[label] ?? "";
         chip.dataset.show = "1";
       };
